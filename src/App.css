@@ -40,3 +40,24 @@
 .read-the-docs {
   color: #888;
 }
+
+.article-list {
+  list-style-type: none;
+  /* outline: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 20px;
+}
+.article {
+  margin: 1em;
+  padding: 1em;
+  width: 20rem;
+  border-radius: 5px;
+}
+.article img {
+  width: 10em;
+  height: 10em;
+  object-fit: cover;
+}
