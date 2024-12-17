@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Articles } from "../components/Article";
-import { ArticleCard } from "../components/ArticleCard";
+import { ArticleDetails } from "../components/ArticleDetails";
 import "./App.css";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
       <Routes>
         <Route path="/articles" element={<Articles />} />
-        <Route path="/articles/:article_id" element={<Articles />} />
+        <Route path="/articles/:article_id" element={<ArticleDetails />} />
       </Routes>
     </>
   );

@@ -4,11 +4,7 @@ export const ArticleList = ({ articles }) => {
   return (
     <ul className="article-list">
       {articles.map((article) => {
-        return (
-          <Link key={article.article_id} to={`/articles/${article.article_id}`}>
-            <ArticleCard article={article} />
-          </Link>
-        );
+        return <ArticleCard key={article.article_id} article={article} />;
       })}
     </ul>
   );
