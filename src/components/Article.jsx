@@ -1,4 +1,4 @@
-import { getArticles } from "../api";
+import { getArticles } from "../../api";
 import { useEffect, useState } from "react";
 import { ArticleList } from "./ArticleList";
 export const Articles = () => {
@@ -14,9 +14,11 @@ export const Articles = () => {
   }, []);
 
   return (
-    <>
-      <h1>Checkout all the articles!{articles.title}</h1>
+    <section className="all-articles">
+      <div id="article-heading-container">
+        <h3 id="article-heading">Articles</h3>
+      </div>
       <ArticleList articles={articles} />
-    </>
+    </section>
   );
 };
