@@ -21,3 +21,19 @@ export const getComments = (article_id) => {
     return response.data.comments;
   });
 };
+
+export const increaseVote = (article_id) => {
+  return ncNewsApi
+    .patch(`/articles/${article_id}`, { inc_votes: 1 })
+    .then((response) => {
+      return response.data.article;
+    });
+};
+
+export const decreaseVote = (article_id) => {
+  return ncNewsApi
+    .patch(`/articles/${article_id}`, { inc_votes: -1 })
+    .then((response) => {
+      return response.data.article;
+    });
+};
