@@ -1,16 +1,24 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getArticleById, getComments } from "../../api";
+import {
+  decreaseVote,
+  getArticleById,
+  getComments,
+  increaseVote,
+} from "../../api";
 import Comments from "./Comments";
 export const ArticleDetails = () => {
   const { article_id } = useParams();
   const [commentToggle, setCommentToggle] = useState(false);
   const [article, setArticle] = useState([]);
   const [comments, setComments] = useState([]);
+  const [votes, setVotes] = useState(0);
+  const [error, setError] = useState(null);
   useEffect(() => {
     getArticleById(article_id)
       .then((response) => {
         setArticle(response);
+        setVotes(response.votes);
       })
       .catch((err) => {
         console.log(err);
@@ -27,6 +35,22 @@ export const ArticleDetails = () => {
       });
   }, []);
 
+  const handleVoteInc = () => {
+    setVotes((voteCount) => voteCount + 1);
+    setError(null);
+    increaseVote(article_id).catch((err) => {
+      setVotes((voteCount) => voteCount - 1);
+      setError("Your like was not successful. Please try again!");
+    });
+  };
+  const handleVoteDec = () => {
+    setVotes((voteCount) => voteCount - 1);
+    setError(null);
+    decreaseVote(article_id).catch((err) => {
+      setVotes((voteCount) => voteCount + 1);
+      setError("Your like was not successful. Please try again!");
+    });
+  };
   const handleCommentToggle = () => {
     setCommentToggle(!commentToggle);
   };
@@ -43,7 +67,11 @@ export const ArticleDetails = () => {
             <p id="article-body">{article.body}</p>
           </div>
 
-          <p>+ {article.votes} - </p>
+          <p>
+            <button onClick={handleVoteInc}>+</button> {votes}
+            <button onClick={handleVoteDec}>-</button>
+            {error ? <p>{error}</p> : null}
+          </p>
           <button onClick={handleCommentToggle}>
             {article.comment_count} Comments
           </button>

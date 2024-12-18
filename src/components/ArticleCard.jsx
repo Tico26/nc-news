@@ -16,7 +16,7 @@ export const ArticleCard = ({ article }) => {
             <h6 className="article-elements author-votes">
               <span id="author">by {article.author}</span>
               <span id="votes" className="article-elements">
-                + {article.votes} -
+                votes: {article.votes}
               </span>
             </h6>
           </div>
