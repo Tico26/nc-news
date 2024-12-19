@@ -39,8 +39,6 @@ export const decreaseVote = (article_id) => {
 };
 
 export const postComment = (article_id, user, comment) => {
-  console.log(comment);
-
   return ncNewsApi
     .post(`/articles/${article_id}/comments`, {
       username: user,
@@ -49,4 +47,10 @@ export const postComment = (article_id, user, comment) => {
     .then((response) => {
       return response.data.comment;
     });
+};
+
+export const deleteComment = (comment_id) => {
+  return ncNewsApi.delete(`/comments/${comment_id}`).then((response) => {
+    return response.data.msg;
+  });
 };
