@@ -4,7 +4,6 @@ import { ArticleDetails } from "./components/ArticleDetails";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./App.css";
-import ArticleContainer from "./components/ArticleContainer";
 
 function App() {
   return (
