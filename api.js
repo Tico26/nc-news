@@ -37,3 +37,16 @@ export const decreaseVote = (article_id) => {
       return response.data.article;
     });
 };
+
+export const postComment = (article_id, user, comment) => {
+  console.log(comment);
+
+  return ncNewsApi
+    .post(`/articles/${article_id}/comments`, {
+      username: user,
+      body: comment,
+    })
+    .then((response) => {
+      return response.data.comment;
+    });
+};

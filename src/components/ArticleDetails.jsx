@@ -7,6 +7,7 @@ import {
   increaseVote,
 } from "../../api";
 import Comments from "./Comments";
+import PostComment from "./PostComment";
 export const ArticleDetails = () => {
   const { article_id } = useParams();
   const [commentToggle, setCommentToggle] = useState(false);
@@ -78,6 +79,7 @@ export const ArticleDetails = () => {
         </article>
 
         {commentToggle && <Comments comments={comments} />}
+        <PostComment article_id={article_id} />
       </div>
     </section>
   );
