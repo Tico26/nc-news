@@ -19,7 +19,7 @@ export const Header = () => {
         <Link to="/articles">
           <button className="nav-links">Articles</button>
         </Link>
-        <Link to="/">
+        <Link to="/topics">
           <button className="nav-links">Topics</button>
         </Link>
         <a href="#weekly-mail">

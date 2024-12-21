@@ -6,7 +6,7 @@ export const ArticleCard = ({ article }) => {
     <>
       <li className="article">
         <ArticleContainer>
-          <Link to={`${article.article_id}`}>
+          <Link to={`/articles/${article.article_id}`}>
             <img
               src={article.article_img_url}
               alt={`Image for ${article.title}`}
