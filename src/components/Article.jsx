@@ -1,10 +1,13 @@
 import { getArticles } from "../../api";
 import { useEffect, useState } from "react";
 import { ArticleList } from "./ArticleList";
+import { useParams } from "react-router-dom";
 export const Articles = () => {
   const [articles, setArticles] = useState([]);
+  const { topic } = useParams();
+
   useEffect(() => {
-    getArticles()
+    getArticles(topic)
       .then((response) => {
         setArticles(response);
       })
