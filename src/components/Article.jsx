@@ -1,12 +1,15 @@
 import { getArticles } from "../../api";
 import { useEffect, useState } from "react";
 import { ArticleList } from "./ArticleList";
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
+
 export const Articles = () => {
   const [articles, setArticles] = useState([]);
   const { topic } = useParams();
   const [sortBy, setSortBy] = useState("created_at");
   const [order, setOrder] = useState("DESC");
+  const [searchParams, setSearchParams] = useSearchParams();
+
   useEffect(() => {
     getArticles(topic, sortBy, order)
       .then((response) => {
@@ -18,9 +21,17 @@ export const Articles = () => {
   }, [sortBy, order]);
   const handleSortBy = (e) => {
     setSortBy(e.target.value);
+    setSearchParams((prev) => {
+      prev.set("sort", e.target.value);
+      return prev;
+    });
   };
   const handleOrderBy = (e) => {
     setOrder(e.target.value);
+    setSearchParams((prev) => {
+      prev.set("order", e.target.value);
+      return prev;
+    });
   };
   return (
     <section className="all-articles">
