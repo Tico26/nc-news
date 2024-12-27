@@ -4,11 +4,14 @@ You can view it its deployed version here https://ncnewsbybruno.netlify.app/.
 
 Pre-requites:
 1. Must have NPM installed. shown here https://www.npmjs.com/
+2. Minimum Node version v23.1.0
+3. 
 
 To deploy it locally follow the steps below:
-1. Clone the repository.
-2. On the editor's command line, type "npm i".
-3. Again on the editor's command line, type "npm dev"
+1. Clone the repository. https://github.com/Tico26/nc-news.git
+2. cd into NC-NEWS directory.
+3. On the editor's command line, type "npm i".
+4. Again on the editor's command line, type "npm dev"
 
 
 This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
