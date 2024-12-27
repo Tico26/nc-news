@@ -1,6 +1,7 @@
 This is a mock news website. It fetches data from an exposed API designed by me, shown here https://nc-news-api-3-w57y.onrender.com/api.
 
 You can view it its deployed version here https://ncnewsbybruno.netlify.app/.
+
 Pre-requites:
 1. Must have NPM installed. shown here https://www.npmjs.com/
 
