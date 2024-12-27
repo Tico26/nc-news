@@ -8,7 +8,6 @@ export const Articles = () => {
   const [articles, setArticles] = useState([]);
   const { topic } = useParams();
   const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
   const [sortBy, setSortBy] = useState("created_at");
   const [order, setOrder] = useState("DESC");
   const setSearchParams = useSearchParams();
@@ -21,7 +20,6 @@ export const Articles = () => {
       })
       .catch((err) => {
         console.log(err);
-        setIsError(true);
       });
   }, [sortBy, order]);
   const handleSortBy = (e) => {
