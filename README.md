@@ -5,7 +5,6 @@ You can view it its deployed version here https://ncnewsbybruno.netlify.app/.
 Pre-requites:
 1. Must have NPM installed. shown here https://www.npmjs.com/
 2. Minimum Node version v23.1.0
-3. 
 
 To deploy it locally follow the steps below:
 1. Clone the repository. https://github.com/Tico26/nc-news.git
