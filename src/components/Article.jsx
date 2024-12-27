@@ -2,18 +2,21 @@ import { getArticles } from "../../api";
 import { useEffect, useState } from "react";
 import { ArticleList } from "./ArticleList";
 import { useParams, useSearchParams } from "react-router-dom";
+import { Loading } from "./Loading";
 
 export const Articles = () => {
   const [articles, setArticles] = useState([]);
   const { topic } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
   const [sortBy, setSortBy] = useState("created_at");
   const [order, setOrder] = useState("DESC");
-  const [searchParams, setSearchParams] = useSearchParams();
+  const setSearchParams = useSearchParams();
 
   useEffect(() => {
     getArticles(topic, sortBy, order)
       .then((response) => {
         setArticles(response);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -33,6 +36,7 @@ export const Articles = () => {
       return prev;
     });
   };
+  if (isLoading) return <Loading />;
   return (
     <section className="all-articles">
       <div id="article-heading-container">

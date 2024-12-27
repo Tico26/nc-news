@@ -8,8 +8,11 @@ import {
 } from "../../api";
 import Comments from "./Comments";
 import PostComment from "./PostComment";
+import { Loading } from "./Loading";
+
 export const ArticleDetails = () => {
   const { article_id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
   const [commentToggle, setCommentToggle] = useState(false);
   const [article, setArticle] = useState([]);
   const [comments, setComments] = useState([]);
@@ -20,6 +23,7 @@ export const ArticleDetails = () => {
       .then((response) => {
         setArticle(response);
         setVotes(response.votes);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -55,6 +59,8 @@ export const ArticleDetails = () => {
   const handleCommentToggle = () => {
     setCommentToggle(!commentToggle);
   };
+  if (isLoading) return <Loading />;
+
   return (
     <section id="article-display">
       <div className="article-page-container">
