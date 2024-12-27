@@ -1,8 +1,10 @@
-# React + Vite
+This is a mock news website. It fetches data from an exposed API designed by me, shown here https://nc-news-api-3-w57y.onrender.com/api.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You can view it its deployed version here https://ncnewsbybruno.netlify.app/.
+Pre-requites:
+1. Must have NPM installed. shown here https://www.npmjs.com/
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To deploy it locally follow the steps below:
+1. Clone the repository.
+2. On the editor's command line, type "npm i".
+3. Again on the editor's command line, type "npm dev"
