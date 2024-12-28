@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./App.css";
 import { NotFound } from "./components/NotFound";
+import { Welcome } from "./components/Welcome";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Routes>
         <Route path="*" element={<NotFound />} />
 
-        <Route path="/" />
+        <Route path="/" element={<Welcome />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:article_id" element={<ArticleDetails />} />
         <Route path="/topics" element={<Topics />} />
