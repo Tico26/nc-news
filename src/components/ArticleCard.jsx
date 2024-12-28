@@ -20,11 +20,13 @@ export const ArticleCard = ({ article }) => {
               </span>
             </h6>
           </div>
-          <h4 className="article-elements">{article.title}</h4>
+          <Link to={`/articles/${article.article_id}`}>
+            <h4 className="article-elements">{article.title}</h4>
+          </Link>
 
-          <h3 id="topic" className="article-elements">
+          <p id="topic" className="article-elements">
             {article.topic}
-          </h3>
+          </p>
         </ArticleContainer>
       </li>
     </>
