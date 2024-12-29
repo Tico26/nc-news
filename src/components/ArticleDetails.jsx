@@ -66,26 +66,29 @@ export const ArticleDetails = () => {
       <div className="article-page-container">
         <article>
           <h2>{article.title}</h2>
-
           <img src={article.article_img_url} />
           <span>by: {article.author}</span>
           <h4 id="article-topic">{article.topic}</h4>
           <div id="article-body-container">
             <p id="article-body">{article.body}</p>
           </div>
+          <button className="vote-button" onClick={handleVoteInc}>
+            <p id="upvote">&#11014;</p>
+          </button>
+          {votes}
+          <button className="vote-button" onClick={handleVoteDec}>
+            <p id="downvote">&#11015;</p>
+          </button>
+          {error ? <p>{error}</p> : null}
+          <PostComment article_id={article_id} />
+          <br />
 
-          <p>
-            <button onClick={handleVoteInc}>+</button> {votes}
-            <button onClick={handleVoteDec}>-</button>
-            {error ? <p>{error}</p> : null}
-          </p>
-          <button onClick={handleCommentToggle}>
+          <button id="toggle-comments" onClick={handleCommentToggle}>
+            {commentToggle ? "View " : "Collapse "}
             {article.comment_count} Comments
           </button>
         </article>
-
         {commentToggle && <Comments comments={comments} />}
-        <PostComment article_id={article_id} />
       </div>
     </section>
   );

@@ -14,10 +14,13 @@ export const Comments = ({ comments }) => {
     <ul>
       {comments.map((comment) => {
         return (
-          <li key={comment.comment_id}>
-            <h2>{comment.author}</h2>
+          <li className="comments-list" key={comment.comment_id}>
             <p>{comment.body}</p>
-            <h4>{comment.votes}</h4>
+            <div id="author-votes">
+              <h4>{comment.author}</h4>
+              <h4>{comment.votes}</h4>
+            </div>
+
             {user === comment.author && (
               <button value={comment.comment_id} onClick={handleDelete}>
                 X

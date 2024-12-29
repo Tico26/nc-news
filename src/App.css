@@ -45,10 +45,7 @@ body {
 article #article-topic {
   margin-left: 2%;
   margin-bottom: 2%;
-
   width: 100px;
-  border-radius: 20%;
-  border: solid black 1px;
 }
 #article-heading-container {
   width: 100vw;
@@ -94,7 +91,6 @@ article #article-topic {
   height: 80%;
 }
 .article-page-container article {
-  border: solid black 2px;
   border-radius: 2%;
 }
 #article-body {
@@ -253,4 +249,29 @@ footer {
 
 .button:active {
   opacity: 0.5;
+}
+.comments-list {
+  background-color: #ddcea5;
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+#author-votes {
+  display: flex;
+}
+#author-votes > h4 {
+  margin-right: 10px;
+}
+.vote-button {
+  background-color: transparent;
+  border: none;
+}
+#upvote {
+  color: green;
+}
+#downvote {
+  color: red;
+}
+#toggle-comments {
+  background-color: #fc2f00;
+  margin-bottom: 5px;
 }
