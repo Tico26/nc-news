@@ -268,7 +268,7 @@ footer {
 #upvote {
   color: green;
 }
-#downvote {
+.downvote {
   color: red;
 }
 #toggle-comments {
@@ -288,4 +288,12 @@ footer {
 }
 #topics-container {
   display: grid;
+}
+#delete-button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }

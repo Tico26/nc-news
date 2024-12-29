@@ -77,7 +77,7 @@ export const ArticleDetails = () => {
           </button>
           {votes}
           <button className="vote-button" onClick={handleVoteDec}>
-            <p id="downvote">&#11015;</p>
+            <p className="downvote">&#11015;</p>
           </button>
           {error ? <p>{error}</p> : null}
           <PostComment article_id={article_id} />
