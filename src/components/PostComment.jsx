@@ -1,8 +1,6 @@
 import { useContext, useState } from "react";
-import { UserContext } from "./userContext";
 import { postComment } from "../../api";
 const PostComment = ({ article_id }) => {
-  const { user } = useContext(UserContext);
   const [comment, setComment] = useState("");
   const handleChange = (e) => {
     setComment(e.target.value);
@@ -18,7 +16,12 @@ const PostComment = ({ article_id }) => {
   return (
     <>
       <form onSubmit={handleSubmit} id="post-comment">
-        <textarea type="textarea" value={comment} onChange={handleChange} />
+        <textarea
+          type="textarea"
+          value={comment}
+          onChange={handleChange}
+          required
+        />
         <button>Post Comment</button>
       </form>
     </>

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { UserContext } from "./userContext";
+import { UserContext } from "./UserContext";
 import React from "react";
 import { deleteComment } from "../../api";
 
@@ -20,10 +20,13 @@ export const Comments = ({ comments }) => {
               <h4>{comment.author}</h4>
               <h4>{comment.votes}</h4>
             </div>
-
             {user === comment.author && (
-              <button value={comment.comment_id} onClick={handleDelete}>
-                X
+              <button
+                id="delete-button"
+                value={comment.comment_id}
+                onClick={handleDelete}
+              >
+                <p className="downvote">X</p>
               </button>
             )}
           </li>
