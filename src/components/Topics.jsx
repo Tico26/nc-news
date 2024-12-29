@@ -16,12 +16,12 @@ export const Topics = () => {
   if (isLoading) return <Loading />;
 
   return (
-    <>
-      <ul>
+    <section id="topic-section">
+      <ul id="topics-container">
         {topics.map((topic, index) => {
           return <TopicsCard key={index} topics={topic} />;
         })}
       </ul>
-    </>
+    </section>
   );
 };
