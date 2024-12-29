@@ -261,3 +261,13 @@ footer {
 #author-votes > h4 {
   margin-right: 10px;
 }
+.vote-button {
+  background-color: transparent;
+  border: none;
+}
+#upvote {
+  color: green;
+}
+#downvote {
+  color: red;
+}
