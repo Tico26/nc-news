@@ -275,3 +275,17 @@ footer {
   background-color: #fc2f00;
   margin-bottom: 5px;
 }
+#topic-section {
+  height: 80vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.topic-item {
+  list-style-type: none;
+  margin: 5px;
+  text-align: center;
+}
+#topics-container {
+  display: grid;
+}
