@@ -79,13 +79,14 @@ export const ArticleDetails = () => {
             <button onClick={handleVoteDec}>-</button>
             {error ? <p>{error}</p> : null}
           </p>
+          <PostComment article_id={article_id} />
+          <br />
           <button onClick={handleCommentToggle}>
             {article.comment_count} Comments
           </button>
         </article>
 
         {commentToggle && <Comments comments={comments} />}
-        <PostComment article_id={article_id} />
       </div>
     </section>
   );
