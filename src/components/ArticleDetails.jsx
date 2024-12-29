@@ -83,7 +83,7 @@ export const ArticleDetails = () => {
           <PostComment article_id={article_id} />
           <br />
 
-          <button onClick={handleCommentToggle}>
+          <button id="toggle-comments" onClick={handleCommentToggle}>
             {commentToggle ? "View " : "Collapse "}
             {article.comment_count} Comments
           </button>

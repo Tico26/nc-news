@@ -271,3 +271,7 @@ footer {
 #downvote {
   color: red;
 }
+#toggle-comments {
+  background-color: #fc2f00;
+  margin-bottom: 5px;
+}
