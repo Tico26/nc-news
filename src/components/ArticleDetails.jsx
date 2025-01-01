@@ -1,11 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {
-  decreaseVote,
-  getArticleById,
-  getComments,
-  increaseVote,
-} from "../../api";
+import { getArticleById, getComments, postVotes } from "../../api";
 import Comments from "./Comments";
 import PostComment from "./PostComment";
 import { Loading } from "./Loading";
@@ -40,19 +35,11 @@ export const ArticleDetails = () => {
       });
   }, []);
 
-  const handleVoteInc = () => {
-    setVotes((voteCount) => voteCount + 1);
+  const handleVotes = (num) => {
+    setVotes((voteCount) => voteCount + num);
     setError(null);
-    increaseVote(article_id).catch((err) => {
-      setVotes((voteCount) => voteCount - 1);
-      setError("Your like was not successful. Please try again!");
-    });
-  };
-  const handleVoteDec = () => {
-    setVotes((voteCount) => voteCount - 1);
-    setError(null);
-    decreaseVote(article_id).catch((err) => {
-      setVotes((voteCount) => voteCount + 1);
+    postVotes(article_id, num).catch((err) => {
+      setVotes((voteCount) => voteCount - num);
       setError("Your like was not successful. Please try again!");
     });
   };
@@ -72,14 +59,14 @@ export const ArticleDetails = () => {
           <div id="article-body-container">
             <p id="article-body">{article.body}</p>
           </div>
-          <button className="vote-button" onClick={handleVoteInc}>
+          <button className="vote-button" onClick={() => handleVotes(1)}>
             <p id="upvote">&#11014;</p>
           </button>
           {votes}
-          <button className="vote-button" onClick={handleVoteDec}>
+          <button className="vote-button" onClick={() => handleVotes(-1)}>
             <p className="downvote">&#11015;</p>
           </button>
-          {error ? <p>{error}</p> : null}
+          {error ? <p id="vote-error">{error}</p> : null}
           <PostComment article_id={article_id} />
           <br />
 
