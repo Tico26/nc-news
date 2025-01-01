@@ -1,4 +1,4 @@
-**News Application**
+# News Application
 
 <img width="1436" alt="Screenshot 2025-01-01 at 19 21 06" src="https://github.com/user-attachments/assets/89636554-8b94-4d84-bed5-e755db028c3e" />
 
