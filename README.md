@@ -10,7 +10,7 @@ To deploy it locally follow the steps below:
 1. Clone the repository. https://github.com/Tico26/nc-news.git
 2. cd into NC-NEWS directory.
 3. On the editor's command line, type "npm i".
-4. Again on the editor's command line, type "npm dev"
+4. Again on the editor's command line, type "npm run dev"
 
 
 This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
