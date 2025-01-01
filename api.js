@@ -23,22 +23,6 @@ export const getComments = (article_id) => {
   });
 };
 
-export const increaseVote = (article_id) => {
-  return ncNewsApi
-    .patch(`/articles/${article_id}`, { inc_votes: 1 })
-    .then((response) => {
-      return response.data.article;
-    });
-};
-
-export const decreaseVote = (article_id) => {
-  return ncNewsApi
-    .patch(`/articles/${article_id}`, { inc_votes: -1 })
-    .then((response) => {
-      return response.data.article;
-    });
-};
-
 export const postComment = (article_id, user, comment) => {
   return ncNewsApi
     .post(`/articles/${article_id}/comments`, {
@@ -60,4 +44,11 @@ export const getTopics = () => {
   return ncNewsApi.get(`/topics/`).then((response) => {
     return response.data.topics;
   });
+};
+export const postVotes = (article_id, num) => {
+  return ncNewsApi
+    .patch(`/articles/${article_id}`, { inc_votes: num })
+    .then((response) => {
+      return response.data.article;
+    });
 };

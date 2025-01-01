@@ -297,3 +297,6 @@ footer {
   overflow: hidden;
   outline: none;
 }
+#vote-error {
+  color: red;
+}
