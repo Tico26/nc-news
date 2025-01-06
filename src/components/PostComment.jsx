@@ -1,7 +1,11 @@
 import { useContext, useState } from "react";
 import { postComment } from "../../api";
+import { UserContext } from "./UserContext";
+
 const PostComment = ({ article_id }) => {
   const [comment, setComment] = useState("");
+  const { user } = useContext(UserContext);
+
   const handleChange = (e) => {
     setComment(e.target.value);
   };
